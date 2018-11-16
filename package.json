@@ -13,7 +13,7 @@
       "version": "5.0.0"
     }
   },
-  "dependencies": { 
+  "dependencies": {
     "vuex": "^3.0.1",
     "@vue/devtools": "5.0.0-beta.3",
     "nativescript-socket.io": "^0.9.0",
@@ -27,6 +27,9 @@
   "devDependencies": {
     "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
+    "@commitlint/cli": "^7.2.1",
+    "@commitlint/config-conventional": "^7.1.2",
+    "@commitlint/prompt": "^7.2.1",
     "babel-loader": "^8.0.2",
     "babel-traverse": "6.26.0",
     "babel-types": "6.26.0",
@@ -34,6 +37,7 @@
     "clean-webpack-plugin": "^0.1.19",
     "copy-webpack-plugin": "^4.5.2",
     "css-loader": "^1.0.0",
+    "husky": "^1.1.4",
     "lazy": "1.0.11",
     "nativescript-dev-webpack": "next",
     "nativescript-vue-template-compiler": "^2.0.0",
@@ -45,5 +49,14 @@
     "webpack": "^4.16.4",
     "webpack-bundle-analyzer": "~2.13.1",
     "webpack-cli": "^3.1.0"
+  },
+  "scripts": {
+    "start": "tns run android --bundle",
+    "commit": "git-cz",
+    "commit:retry": "git-cz --retry",
+    "commitmsg": "commitlint -e"
+  },
+  "config": {
+      "commitizen": "node_modules/@commitlint/prompt"
   }
 }
