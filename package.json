@@ -37,6 +37,7 @@
     "clean-webpack-plugin": "^0.1.19",
     "copy-webpack-plugin": "^4.5.2",
     "css-loader": "^1.0.0",
+    "husky": "^1.1.4",
     "lazy": "1.0.11",
     "nativescript-dev-webpack": "next",
     "nativescript-vue-template-compiler": "^2.0.0",
@@ -48,14 +49,14 @@
     "webpack": "^4.16.4",
     "webpack-bundle-analyzer": "~2.13.1",
     "webpack-cli": "^3.1.0"
-},
-"scripts": {
+  },
+  "scripts": {
     "start": "tns run android --bundle",
     "commit": "git-cz"
-},
-"config": {
-    "commitizen":{
-        "path": "node_modules/@commitlint/prompt"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
-}
+  }
 }
