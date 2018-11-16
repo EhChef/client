@@ -52,11 +52,11 @@
   },
   "scripts": {
     "start": "tns run android --bundle",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "commit:retry": "git-cz --retry",
+    "commitmsg": "commitlint -e"
   },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
+  "config": {
+      "commitizen": "node_modules/@commitlint/prompt"
   }
 }
