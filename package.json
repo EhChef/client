@@ -30,6 +30,7 @@
     "@commitlint/cli": "^7.2.1",
     "@commitlint/config-conventional": "^7.1.2",
     "@commitlint/prompt": "^7.2.1",
+    "auto-changelog": "^1.10.2",
     "babel-loader": "^8.0.2",
     "babel-traverse": "6.26.0",
     "babel-types": "6.26.0",
@@ -54,9 +55,10 @@
     "start": "tns run android --bundle",
     "commit": "git-cz",
     "commit:retry": "git-cz --retry",
-    "commitmsg": "commitlint -e"
+    "commitmsg": "commitlint -e",
+    "changelog": "auto-changelog -p && git add CHANGELOG.md"
   },
   "config": {
-      "commitizen": "node_modules/@commitlint/prompt"
+    "commitizen": "node_modules/@commitlint/prompt"
   }
 }
