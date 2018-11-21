@@ -56,7 +56,7 @@
     "commit": "git-cz",
     "commit:retry": "git-cz --retry",
     "commitmsg": "commitlint -e",
-    "changelog": "auto-changelog -p && git add CHANGELOG.md"
+    "version": "auto-changelog -p && git add CHANGELOG.md"
   },
   "config": {
     "commitizen": "node_modules/@commitlint/prompt"
