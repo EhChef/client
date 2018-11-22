@@ -57,6 +57,6 @@
     "commitmsg": "commitlint -e"
   },
   "config": {
-      "commitizen": "node_modules/@commitlint/prompt"
+    "commitizen": "node_modules/@commitlint/prompt"
   }
 }
