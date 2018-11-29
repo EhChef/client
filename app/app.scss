@@ -8,3 +8,54 @@
 
 // Global SCSS styling
 // @see https://docs.nativescript.org/ui/styling
+
+
+ActionBar {
+    background-color: #EC5151;
+    color: #ffffff;
+}
+
+.title {
+    text-align: left;
+    padding-left: 16;
+}
+
+.drawer-header {
+    padding: 50 16 16 16;
+    margin-bottom: 16;
+    background-color: #EC5151;
+    color: #ffffff;
+    font-size: 24;
+}
+
+.drawer-item {
+    padding: 8 16;
+    color: #333333;
+    font-size: 16;
+}
+
+.btn-qr-code {
+    height: 50;
+    padding: 10 30;
+    width: 350;
+    border-radius: 10;
+    background: #e61f43;
+    color: #ffffff;
+    font-size: 18;
+}
+
+.img-scan {
+    height: 150;
+    width: 200;
+}
+
+.text-homepage {
+    font-family: "BebasNeue-Regular";
+    text-align: center;
+    font-size: 25;
+    margin-top: 20;
+    height: 75;
+    width: 75%;
+    color: #EC5151;
+    vertical-align: top;
+}

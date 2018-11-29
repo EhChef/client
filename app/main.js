@@ -6,7 +6,7 @@ if(TNS_ENV !== 'production') {
   Vue.use(VueDevtools)
 }
 // Prints Vue logs when --env.production is *NOT* set while building
-Vue.config.silent = (TNS_ENV === 'production')
+Vue.config.silent = (TNS_ENV === 'dev')
 
 Vue.registerElement('RadSideDrawer', () => require('nativescript-ui-sidedrawer').RadSideDrawer)
 
