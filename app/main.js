@@ -1,8 +1,9 @@
 import Vue from 'nativescript-vue'
 import App from './components/App'
+import List from './components/List'
 import VueDevtools from 'nativescript-vue-devtools'
 
-if(TNS_ENV !== 'production') {
+if(TNS_ENV !== 'dev') {
   Vue.use(VueDevtools)
 }
 // Prints Vue logs when --env.production is *NOT* set while building

@@ -1,36 +1,22 @@
 <template>
     <Page>
-        <ActionBar>
-            <GridLayout width="100%" columns="auto, *">
-                <Label text="MENU" @tap="$refs.drawer.nativeView.showDrawer()" col="0"/>
-                <Label class="title" text="Welcome to NativeScript-Vue!"  col="1"/>
-            </GridLayout>
-        </ActionBar>
-
-        <RadSideDrawer ref="drawer">
-            <StackLayout ~drawerContent backgroundColor="#ffffff">
-                <Label class="drawer-header" text="Drawer"/>
-                <Label class="drawer-item" text="Item 1"/>
-                <Label class="drawer-item" text="Item 2"/>
-                <Label class="drawer-item" text="Item 3"/>
-            </StackLayout>
-
-            <GridLayout class="" ~mainContent columns="*" rows="*">
-                <Label row="1" col="1" textWrap="true" class="text-homepage drawer-item" text="Pour commencer il suffit de scanner le code"/>
-                <!-- <Button row="1" col="0" class="btn-qr-code" text="Je scan le code de ma table" @tap="onButtonTap" /> -->
-                <Image class="img-scan" row="6" col="0" src="~/assets/images/je-scanne.png" stretch="none" @tap="onButtonTap" />
-                <!-- <Label class="message" :text="msg" col="0" row="0"/> -->
-            </GridLayout>
-        </RadSideDrawer>
+        <GridLayout class="" ~mainContent columns="*" rows="*">
+            <Label row="1" col="1" textWrap="true" class="text-homepage drawer-item" text="Pour commencer il suffit de scanner le code"/>
+            <!-- <Button row="1" col="0" class="btn-qr-code" text="Je scan le code de ma table" @tap="onButtonTap" /> -->
+            <Image class="img-scan" row="6" col="0" src="~/assets/images/je-scanne.png" stretch="none" @tap="onButtonTap" />
+            <!-- <Label class="message" :text="msg" col="0" row="0"/> -->
+        </GridLayout>
     </Page>
 </template>
 
 <script>
+import List from './List';
 export default {
+
     methods: {
         onButtonTap() {
-            var BarcodeScanner = require("nativescript-barcodescanner").BarcodeScanner;
-            var barcodescanner = new BarcodeScanner();
+            const BarcodeScanner = require("nativescript-barcodescanner").BarcodeScanner;
+            const barcodescanner = new BarcodeScanner();
 
             barcodescanner.scan({
                 formats: "QR_CODE",   // Pass in of you want to restrict scanning to certain types
@@ -47,7 +33,8 @@ export default {
                 orientation: "portrait",     // Android only, optionally lock the orientation to either "portrait" or "landscape"
                 openSettingsIfPermissionWasPreviouslyDenied: true // On iOS you can send the user to the settings app if access was previously denied
             }).then(
-                function(result) {
+                (result) => {
+                    this.$navigateTo(List, {props: {my_prop:  result.text}});
                     console.info("Scan format: " + result.format);
                     console.info("Scan text:   " + result.text);
                 },

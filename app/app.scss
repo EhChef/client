@@ -11,8 +11,7 @@
 
 
 ActionBar {
-    background-color: #EC5151;
-    color: #ffffff;
+    height: 0;
 }
 
 .title {
@@ -58,4 +57,7 @@ ActionBar {
     width: 75%;
     color: #EC5151;
     vertical-align: top;
+}
+.list-result {
+    height: 100;
 }
