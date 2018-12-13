@@ -14,6 +14,13 @@ ActionBar {
     height: 0;
 }
 
+.pl-15 {
+  padding-left: 15;
+}
+.pr-15 {
+  padding-right: 15;
+}
+
 .title {
     text-align: left;
     padding-left: 16;
@@ -60,4 +67,40 @@ ActionBar {
 }
 .list-result {
     height: 100;
+}
+.title-list {
+  color: #323232;
+  font-family: "BebasNeue-Regular";
+  font-size: 30;
+  margin-left: 15;
+  margin-top: 25;
+  margin-bottom: 15;
+}
+.item-list-menu {
+  border-radius: 10;
+  margin-top: 15;
+  margin-bottom: 15;
+  background: linear-gradient(to left, #e92424, #EC5151);
+  display: flex;
+  align-items: center;
+}
+.menu-title {
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  margin-top: 10;
+  font-family: "BebasNeue-Regular";
+  font-size: 30;
+}
+.arrow-list-menu {
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  font-family: "BebasNeue-Regular";
+  font-size: 30;
+  text-align: right;
+  margin-top: 31%;
+}
+.img-list-menu {
+  height: 100;
 }
