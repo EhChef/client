@@ -11,6 +11,12 @@
 
 <script>
 import List from './List';
+// import io from 'nativescript-socket.io';
+// import * as SocketIO from "nativescript-socket.io";
+import { socket } from '../shared/socket';
+// const socket = io('http://localhost:3000');
+// const socket = SocketIO.connect('http://dd9aaf1e.ngrok.io');
+
 export default {
 
   methods: {
@@ -38,6 +44,7 @@ export default {
           // Reponse du QRCODE
           var resQr = result.text.split(' ');
           var idResto = resQr[0];
+          localStorage.setItem('id_resto', idResto);
           httpModule.request({
             url: localStorage.getItem('url')+"accounts/"+idResto+"/infos",
             method: "GET",
@@ -55,6 +62,7 @@ export default {
             } else {
               console.log("false");
             }
+            socket.emit('room',  {roomId: localStorage.getItem('id_resto'), role: 1 } );
             this.$navigateTo(List, {props: {
               id_resto: idResto,
               name_resto: str.account.fullname,
