@@ -1,12 +1,16 @@
 import Vue from 'nativescript-vue'
 import App from './components/App'
 import List from './components/List'
+import Detail from './components/Detail'
+import Cart from './components/Cart'
 import VueDevtools from 'nativescript-vue-devtools'
 import localStorage from 'nativescript-localstorage'
 
-localStorage.setItem('token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBvenplcmx1Y2FzQGdtYWlsLmNvbSIsInVzZXJJZCI6IjVjMTIzNWZiNmJkNGY0NzVjZGZjZjRkOCIsImlhdCI6MTU0NDc3ODY2MiwiZXhwIjoxNTQ2MjE4NjYyfQ.NTYu5nTBgZL3ofAWBDNr0DjsaeY_Yg1XuZQ-lIH9uIU');
-localStorage.setItem('account', '5c1235fb6bd4f475cdfcf4d8');
-localStorage.setItem('url', 'http://48d093bb.ngrok.io/');
+localStorage.setItem('token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1jZG9AZWhjaGVmLmNvbSIsInVzZXJJZCI6IjVjMTk0OTIxZDVjOTcyNjIzYjMxYzYwMCIsImlhdCI6MTU0NTE2MTAwMSwiZXhwIjoxNTQ2NjAxMDAxfQ.E492xx_KcrZ5PtUing62tDR-qR8vPHMua_DEpjk3pjg');
+localStorage.setItem('account', '5c194921d5c972623b31c600');
+localStorage.setItem('url', 'http://e019cea5.ngrok.io/');
+var commande = new Array();
+localStorage.setItem('commande', JSON.stringify(commande));
 
 
 if(TNS_ENV !== 'dev') {

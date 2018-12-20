@@ -1,5 +1,7 @@
 <template>
   <Page>
+    <ActionBar title=" ">
+    </ActionBar>
     <GridLayout class="" ~mainContent columns="*" rows="*">
       <Label row="1" col="1" textWrap="true" class="text-homepage drawer-item" text="Pour commencer il suffit de scanner le code"/>
       <!-- <Button row="1" col="0" class="btn-qr-code" text="Je scan le code de ma table" @tap="onButtonTap" /> -->
@@ -63,7 +65,8 @@ export default {
               has_dessert: str.hasDessert,
               has_extra: str.hasExtra,
               has_menu: str.hasMenu
-            }});
+            }
+          });
           }, (e) => {
             // Erreur HTTP
             console.log(e);
@@ -80,5 +83,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>
