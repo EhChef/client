@@ -82,12 +82,6 @@
       import { socket } from '../shared/socket';
       const httpModule = require("http");
       export default {
-        mounted: () => {
-          const room =  localStorage.getItem('id_resto');
-          socket.on('remind', function(){
-            socket.emit('order', {order: 'food', roomId: room});
-          });
-          },
         props: ['id_resto', 'name_resto', 'has_starters', 'has_menu', 'has_main_courses', 'has_dessert', 'has_extra'],
         methods: {
           onButtonTap(cat) {

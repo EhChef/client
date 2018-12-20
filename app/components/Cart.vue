@@ -37,6 +37,9 @@ export default {
     sendOrder(){
       const room =  localStorage.getItem('id_resto');
       socket.emit('order', {order: this.$props.list_commande, roomId: room});
+          socket.on('remind', () => {
+            socket.emit('order', {order: this.$props.list_commande, roomId: room});
+          });
     }
   }
 }
