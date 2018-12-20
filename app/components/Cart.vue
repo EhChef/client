@@ -15,7 +15,7 @@
         <WrapLayout class="pl-15 pr-15" backgroundColor="">
           <WrapLayout class="item-list-menu" height="100">
             <StackLayout width="100%">
-              <Label class="pl-15 menu-title" text="Je commande" height="100%"/>
+              <Label class="pl-15 menu-title" text="Je commande" height="100%" @tap="sendOrder()"/>
             </StackLayout>
           </WrapLayout>
         </WrapLayout>
@@ -30,8 +30,15 @@ import App from './App';
 import List from './List';
 import Detail from './Detail';
 import Cart from './Cart';
+import { socket } from '../shared/socket';
 export default {
-  props: ['list_commande']
+  props: ['list_commande'],
+  methods: {
+    sendOrder(){
+      const room =  localStorage.getItem('id_resto');
+      socket.emit('order', {order: this.$props.list_commande, roomId: room});
+    }
+  }
 }
 </script>
 

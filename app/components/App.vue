@@ -13,6 +13,7 @@
 
 <script>
 import List from './List';
+import { socket } from '../shared/socket';
 export default {
 
   methods: {
@@ -40,6 +41,7 @@ export default {
           // Reponse du QRCODE
           var resQr = result.text.split(' ');
           var idResto = resQr[0];
+          localStorage.setItem('id_resto', idResto);
           httpModule.request({
             url: localStorage.getItem('url')+"accounts/"+idResto+"/infos",
             method: "GET",
@@ -57,6 +59,7 @@ export default {
             } else {
               console.log("false");
             }
+            socket.emit('room',  {roomId: localStorage.getItem('id_resto'), role: 1 } );
             this.$navigateTo(List, {props: {
               id_resto: idResto,
               name_resto: str.account.fullname,
